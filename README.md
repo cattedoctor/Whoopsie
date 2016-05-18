@@ -11,6 +11,7 @@ Python 3.5 or greater
 Usage
 -----
 
+```
 usage: Whoopsie! [-h] [--v] [-r] [-f] Location K
 
 'Whoopsie' delete pontentially incriminating evidence -- just like the CIA!
@@ -24,7 +25,8 @@ optional arguments:
   --v, --version  show version info
   -r, --recurse   recursively delete all files and directories
   -f, --force     force delete -- hide all prompts
-  
+```
+
 Donations
 ---------
 
