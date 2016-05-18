@@ -3,6 +3,11 @@ Whoopsie
 
 'Whoopsie' delete pontentially incriminating evidence -- just like the CIA!
 
+Description
+-----------
+
+Write over a file or each file in a directory with a random string of UTF-8 characters equal to the size of the original file an integer number of times before deletion.
+
 Requirements
 ------------
 
