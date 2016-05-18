@@ -25,7 +25,6 @@ class Whoopsie(object):
 		self.options = options
 		self.recursed = False
 
-		print(k)
 		if self.options['force']:
 			self.__delete_silent(target = target)
 		else:
@@ -84,7 +83,6 @@ class Whoopsie(object):
 		# File
 		if os.path.isfile(target):
 			length = os.path.getsize(target)*4 # convert to word-size
-			print(length)
 			for i in range(1, self.k, 1):
 				with open(target, 'w') as f:
 					f.write(self.__unicode(length))
@@ -134,6 +132,5 @@ if __name__ == '__main__':
 
 	del options['loc']
 	del options['k']
-
 
 	main(target = loc, k = k, options = options)
