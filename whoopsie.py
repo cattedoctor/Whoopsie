@@ -57,7 +57,7 @@ class Whoopsie(object):
 						f.write(self.__unicode(length))
 
 					if i % (k // 10) == 0:
-						print('Loop {0} of {1} overwritten'.format(i, k))
+						print('Whoopsie {0} of {1} overwritten'.format(i, k))
 
 				os.remove(target)
 				print('{0} whoopsied!'.format(target))
@@ -68,8 +68,10 @@ class Whoopsie(object):
 				for entry in os.scandir(target):
 					self.__delete_prompt(entry.path)
 
-				if len(os.scandir(target) == 0):
+				try:
 					os.rmdir(target)
+				except:
+					print('Directory {0} not empty. No whoopsies.'.format(target))
 
 			# Not found
 			elif not os.path.isfile(target):
@@ -94,8 +96,10 @@ class Whoopsie(object):
 			for entry in os.scandir(target):
 				self.__delete_silent(entry.path)
 
-			if len(os.scandir(target) == 0):
+			try:
 				os.rmdir(target)
+			except:
+				print('Directory {0} not empty. No whoopsies.'.format(target))
 
 		# Not found
 		elif not os.path.isfile(target):
@@ -120,7 +124,6 @@ if __name__ == '__main__':
 	parser.add_argument('k', metavar='K', type=int, default=5, action='store', help='Integer number of passes of random overwrites (default: 5)')
 
 	# Parse Args
-	parser.print_help()
 	args = parser.parse_args()
 	options = vars(args)
 
